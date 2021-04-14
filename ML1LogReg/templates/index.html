@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Input Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predicting extra-marital affair</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="float" name="rate_marriage" id="rate_marriage" placeholder="rate_marriage">
+            <input type="float" name="yrs_married" id="yrs_married" placeholder="yrs_married">
+            <input type="number" name="children" id="children" placeholder="children">
+            <input type="float" name="religious" id="religious" placeholder="religious">
+            <input type="float" name="education" id="education" placeholder="education">
+            <input type="float" name="occupation" id="occupation" placeholder="occupation">
+            <input type="float" name="occupation_hus" id="occupation_hus" placeholder="occupation_hus">
+            <input type="float" name="extra_marital_time" id="extra_marital_time" placeholder="extra_marital_time">
+
+
+            <input type="submit" value="predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
